@@ -31,4 +31,5 @@ test:
 	@mvn test -q 
 
 exec:
-	@mvn exec:java -Dexec.args="$(FILE_PATH)" -q
+	@sudo mvn exec:java -Dexec.args="$(FILE_PATH)" -q
+
