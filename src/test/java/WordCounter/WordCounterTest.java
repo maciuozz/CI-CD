@@ -14,7 +14,6 @@ public class WordCounterTest {
     @Test
     public void testEmptyFile() {
         String fileName = "empty_file.txt";
-        // String filePath = "/home/vagrant/practica/src/test/java/WordCounter/empty_file.txt";
         File root = new File("/"); // Start the search from the root directory
         File filePath = searchForFile(root, fileName);
         if (filePath != null) {
