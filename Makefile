@@ -17,6 +17,10 @@ check_files:
 	fi
 
 build:
+	@mvn compile -q
+
+
+test:
 	@echo "\n[INFO] Running testEmptyFile..."
 	@echo "\n[INFO] Running testNoFileNameProvided..."
 	@echo "\n[INFO] Running testInvalidFileName...";
@@ -24,10 +28,6 @@ build:
 	@echo "\n[INFO] Running testHighestFrequency...";
 	@echo "\n[INFO] Running testOneWord...";
 	@echo "\n[INFO] Running testAllSameFrequency...";
-	@mvn compile -q
-
-
-test:
 	@mvn test -q 
 
 exec:
