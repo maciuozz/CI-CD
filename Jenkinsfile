@@ -39,7 +39,7 @@ pipeline {
 
     stage('Run') {
       agent {
-        label 'agent_11'
+        label 'agent_22'
       }
       steps {
         sh 'make exec'
