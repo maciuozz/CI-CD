@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'agent_11'
+      label 'agent_22'
     }
 
   }
@@ -15,6 +15,12 @@ pipeline {
     stage('Build') {
       steps {
         sh 'make build'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh 'make test'
       }
     }
 
