@@ -30,5 +30,11 @@ pipeline {
       }
     }
 
+    stage('Run') {
+      steps {
+        sh 'make exec'
+      }
+    }
+
   }
 }
