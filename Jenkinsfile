@@ -26,19 +26,7 @@ pipeline {
 
     stage('Find file') {
       steps {
-        node(label: 'agent_11') {
-          sh 'make check_files'
-        }
-
-      }
-    }
-
-    stage('Run') {
-      steps {
-        node(label: 'agent_22') {
-          sh 'make exec'
-        }
-
+        sh 'make check_files'
       }
     }
 
