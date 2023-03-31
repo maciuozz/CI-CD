@@ -12,5 +12,14 @@ pipeline {
       }
     }
 
+    stage('Build') {
+      steps {
+        node(label: 'agent_22') {
+          sh 'make build'
+        }
+
+      }
+    }
+
   }
 }
