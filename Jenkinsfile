@@ -36,5 +36,11 @@ pipeline {
       }
     }
 
+    stage('Package') {
+      steps {
+        sh 'mvn jar:jar'
+      }
+    }
+
   }
 }
