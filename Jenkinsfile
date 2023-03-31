@@ -27,7 +27,8 @@ pipeline {
 
     stage('Run') {
       steps {
-        node(label: 'agent_11') {
+        node(label: 'agent_22') {
+          sh 'make exec'
           sh 'make exec'
         }
 
