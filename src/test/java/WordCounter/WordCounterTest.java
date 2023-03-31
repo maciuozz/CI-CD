@@ -87,7 +87,7 @@ public class WordCounterTest {
         File root = new File("/"); // Start the search from the root directory
         File filePath = searchForFile(root, fileName);
         if (filePath != null) {
-            String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 8.\n"
+            String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 10.\n"
                             + "The most repeated word is \"beautiful\" with a frequency of 2.\n";
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             System.setOut(new PrintStream(outputStream));
