@@ -24,5 +24,14 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        node(label: 'agent_22') {
+          sh 'make exec'
+        }
+
+      }
+    }
+
   }
 }
