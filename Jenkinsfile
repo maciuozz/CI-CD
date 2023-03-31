@@ -19,5 +19,11 @@ pipeline {
       }
     }
 
+    stage('Find file') {
+      steps {
+        sh 'make check_files'
+      }
+    }
+
   }
 }
