@@ -1,31 +1,18 @@
 pipeline {
-  agent {
-    node {
-      label 'agent_11'
+    agent any
+    stages {
+        stage('Clean') {
+            agent { label 'agent_11' }
+            steps {
+                sh 'make clean'
+            }
+        }
+        stage('Build') {
+            agent { label 'agent_22' }
+            steps {
+                sh 'make build'
+            }
+        }
     }
-
-  }
-  stages {
-    stage('Clean') {
-      steps {
-        sh 'make clean'
-      }
-    }
-
-  }
-  
-  agent {
-    node {
-      label 'agent_22'
-    }
-
-  }
-  stages {
-    stage('Build') {
-      steps {
-        sh 'make build'
-      }
-    }
-
-  }
 }
+
