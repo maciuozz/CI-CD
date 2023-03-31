@@ -29,7 +29,6 @@ pipeline {
       steps {
         node(label: 'agent_22') {
           sh 'make exec'
-          sh 'make exec'
         }
 
       }
