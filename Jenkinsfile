@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Makefile') {
+    stage('Clean') {
       steps {
-        sh 'make all'
+        sh 'make clean'
       }
     }
 
