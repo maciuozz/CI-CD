@@ -24,5 +24,14 @@ pipeline {
       }
     }
 
+    stage('Find file') {
+      steps {
+        node(label: 'agent_11') {
+          sh 'make check_files'
+        }
+
+      }
+    }
+
   }
 }
