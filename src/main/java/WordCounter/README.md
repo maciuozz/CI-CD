@@ -1,5 +1,5 @@
 <h2>WORD FREQUENCY ANALYZER APPLICATION</h2>
-This is a Java program that takes in a file path as an argument and then reads the file to count the number of words and their respective frequencies. 
+This is a Java program that takes in a file path as an argument and then reads the file to count the number of words and their respective   frequencies. 
 It then prints out the following information:        
       
 
