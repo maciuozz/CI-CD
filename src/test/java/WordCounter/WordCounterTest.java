@@ -46,7 +46,8 @@ public class WordCounterTest {
         WordCounter.main(new String[]{});
 
         String actualErrorMessage = removeAnsiEscapeCodes(errContent.toString());
-        //Assert that the error message is printed to the standard error stream
+        
+        //Assert that the error message is printed to the standard error stream.
         assertEquals("[ERROR] Please, provide a valid file name.", actualErrorMessage);
     }
 
@@ -59,7 +60,7 @@ public class WordCounterTest {
         WordCounter.main(new String[]{"invalid_file.txt"});
 
         String actualErrorMessage = removeAnsiEscapeCodes(errContent.toString());
-        //Assert that the error message is printed to the standard error stream
+
         assertEquals("[ERROR] The file \"invalid_file.txt\" was not found or is not a valid file.", actualErrorMessage);
     }
 
@@ -147,11 +148,13 @@ public class WordCounterTest {
         }
     }
 
-
+    //The method takes a String argument and returns a new String with ANSI escape codes removed from it.
     private String removeAnsiEscapeCodes(String str) {
         return str.replaceAll("\\u001B\\[[;\\d]*m", "").replaceAll("\\r\\n|\\n|\\r", System.lineSeparator().trim());
     }
 
+    //The method searches for a file with a given name filename in a directory and its subdirectories, starting from the given directory parameter
+    //that is root (whole filesystem).
     public static File searchForFile(File directory, String filename) {
         File[] files = directory.listFiles();
         if (files != null) {
