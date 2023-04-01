@@ -30,7 +30,7 @@ pipeline {
       }
     }
 
-    stage('Run') {
+    stage('Exec') {
       steps {
         sh 'make exec'
       }
