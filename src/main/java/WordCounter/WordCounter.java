@@ -32,20 +32,29 @@ public class WordCounter {
             return;
         }
 
+        //Create a Scanner object to read the input file and use the delimiter.
         try (Scanner scanner = new Scanner(inputFile).useDelimiter("[^\\p{L}']+")) {
+            //Pass the Scanner object to the countWordsAndGetFrequencies method, which returns a Map containing the frequency of each word in the file.
             Map<String, Integer> wordFreq = countWordsAndGetFrequencies(scanner);
+            //Calculate the total number of words in the file by summing up the values of the frequencies of each word in the map.
             int numWords = wordFreq.values().stream().mapToInt(Integer::intValue).sum();
+            //Pass the map to the getHighestFrequencyWords method, which returns a list of word(s) that have the highest frequency in the file.
             List<String> highestFrequencyWords = getHighestFrequencyWords(wordFreq);
             int maxFrequency = 0;
+            //If the list of highest frequency words is not empty, get the frequency of the first word in the list from the wordFreq map, which 
+            //represents the highest frequency in the file.
             if (!highestFrequencyWords.isEmpty()) { maxFrequency = wordFreq.get(highestFrequencyWords.get(0));}
             printResults(inputFile.getName(), numWords, wordFreq, maxFrequency, highestFrequencyWords);
 
+          //If the file is not found or cannot be opened, catch the FileNotFoundException and print an error message indicating the issue.
         } catch (FileNotFoundException e) {
             System.err.printf(ANSI_RED + "[ERROR] The file \"%s\" was not found or is not a valid file.\n" + ANSI_RESET, filePath);
             return;
         }
     }
 
+    //The method takes a Scanner object as input and returns a Map that contains the frequency count of each word found in the scanner.
+    //In the map the words are all different and converted to lowercase.
     private static Map<String, Integer> countWordsAndGetFrequencies(Scanner scanner) {
         Map<String, Integer> wordFreq = new HashMap<>();
         while (scanner.hasNext()) {
@@ -56,7 +65,9 @@ public class WordCounter {
         }
         return wordFreq;
     }
-
+    
+    //The method takes a Map object as input that contains all the different words with their frequencies and returns a List of words
+    //that have the highest frequency count.
     private static List<String> getHighestFrequencyWords(Map<String, Integer> wordFreq) {
         List<String> highestFrequencyWords = new ArrayList<>();
         int maxFrequency = 0;
@@ -73,6 +84,8 @@ public class WordCounter {
         return highestFrequencyWords;
     }
 
+    //The method takes as inputs the file name, the number of words in the file, the Map with all the different words and their frequencies, the
+    //highest frequency, the list of word(s) with the highest frequency, and uses them to print out the results of the word frequency analysis.
     private static void printResults(String fileName, int numWords, Map<String, Integer> wordFreq, int maxFrequency, List<String> highestFrequencyWords) {
         System.out.printf(ANSI_MAGENTA + NUM_WORDS_MSG + "\n" + ANSI_RESET, fileName, numWords);
         if (wordFreq.isEmpty()) {
