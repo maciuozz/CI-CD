@@ -20,7 +20,7 @@ public class WordCounter {
     private static final String ANSI_RED = "\u001B[91m";
 
     public static void main(String[] args) {
-        if (args.length == 0) {
+        if (args.lengt == 0) {
             System.err.println(ANSI_RED + "\n[ERROR] Please, provide a valid file name.\n" + ANSI_RESET);
             return;
         }
