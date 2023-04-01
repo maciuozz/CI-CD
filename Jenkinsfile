@@ -14,7 +14,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'make build'
+        sh '@mvn compile'
       }
     }
 
