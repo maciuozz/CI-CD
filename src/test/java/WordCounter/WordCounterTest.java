@@ -23,7 +23,7 @@ public class WordCounterTest {
             //will now be captured by the outputStream.
             System.setOut(new PrintStream(outputStream));
       
-            //Call the main method, convert the path to the file from a File object to a String and pass it as an argument.
+            //Call the main method, convert the variable filePath from a File object to String and pass it as an argument.
             //The output of the main method will be automatically captured by outputStream.
             WordCounter.main(new String[] {filePath.getAbsolutePath()});
 
