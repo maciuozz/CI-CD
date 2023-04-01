@@ -14,17 +14,22 @@ public class WordCounterTest {
     @Test
     public void testEmptyFile() {
         String fileName = "empty_file.txt";
-        File root = new File("/"); // Start the search from the root directory
+        File root = new File("/"); // Start the search from the root directory.
         File filePath = searchForFile(root, fileName);
         if (filePath != null) {
             String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 0.The file is empty.";
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            //Set the standard output stream to the outputStream variable, which means any output that would normally go to the console 
+            //will now be captured by the outputStream.
             System.setOut(new PrintStream(outputStream));
       
+            //Call the main method, convert the path to the file from a File object to a String and pass it as an argument.
+            //The output of the main method will be automatically captured by outputStream.
             WordCounter.main(new String[] {filePath.getAbsolutePath()});
 
             String actualOutput = removeAnsiEscapeCodes(outputStream.toString());
 
+            //Verify that the actualOutput variable is equal to the expectedOutput variable using the is() matcher from the Hamcrest library.
             assertThat(actualOutput, is(expectedOutput));
         } else {
             System.out.println("File not found.");
@@ -33,15 +38,15 @@ public class WordCounterTest {
 
     @Test
     public void testNoFileNameProvided() {
-        // Redirect standard error stream to a string builder
+        //Redirect standard error stream to a string builder.
         ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         System.setErr(new PrintStream(errContent));
 
-        // Call the main method with no arguments
+        //Call the main method with no arguments.
         WordCounter.main(new String[]{});
 
         String actualErrorMessage = removeAnsiEscapeCodes(errContent.toString());
-        // Assert that the error message is printed to the standard error stream
+        //Assert that the error message is printed to the standard error stream
         assertEquals("[ERROR] Please, provide a valid file name.", actualErrorMessage);
     }
 
@@ -50,18 +55,18 @@ public class WordCounterTest {
         ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         System.setErr(new PrintStream(errContent));
 
-        // Call the main method with an invalid file name
+        //Call the main method with an invalid file name.
         WordCounter.main(new String[]{"invalid_file.txt"});
 
         String actualErrorMessage = removeAnsiEscapeCodes(errContent.toString());
-        // Assert that the error message is printed to the standard error stream
+        //Assert that the error message is printed to the standard error stream
         assertEquals("[ERROR] The file \"invalid_file.txt\" was not found or is not a valid file.", actualErrorMessage);
     }
 
     @Test
     public void testMultipleWordsWithSameFrequency() {
         String fileName = "same-highest-frequency.txt";
-        File root = new File("/"); // Start the search from the root directory
+        File root = new File("/");
         File filePath = searchForFile(root, fileName);
         if (filePath != null) {
             String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 16."
@@ -82,7 +87,7 @@ public class WordCounterTest {
     @Test
     public void testHighestFrequency() {
         String fileName = "most-frequent.txt";
-        File root = new File("/"); // Start the search from the root directory
+        File root = new File("/"); 
         File filePath = searchForFile(root, fileName);
         if (filePath != null) {
             String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 10."
@@ -103,7 +108,7 @@ public class WordCounterTest {
     @Test
     public void testOneWord() {
         String fileName = "one-word.txt";
-        File root = new File("/"); // Start the search from the root directory
+        File root = new File("/"); 
         File filePath = searchForFile(root, fileName);
         if (filePath != null) {
             String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 1."
@@ -124,7 +129,7 @@ public class WordCounterTest {
     @Test
     public void testAllSameFrequency() {
         String fileName = "all-same-frequency.txt";
-        File root = new File("/"); // Start the search from the root directory
+        File root = new File("/"); 
         File filePath = searchForFile(root, fileName);
         if (filePath != null) {
             String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 8."
