@@ -1,7 +1,7 @@
 <h2>WORD FREQUENCY ANALYZER TEST CLASS</h2>
 
 This is a test class that uses JUnit to test the WordCounter class. JUnit is a widely used open-source testing framework for Java applications.
-In the ***tests**** repository there are all the files used to test the application.  
+In the ***tests*** repository there are all the files used to test the application.  
 
 There are 7 tests and 2 methods.
 
