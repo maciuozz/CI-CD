@@ -1,0 +1,1 @@
+This is a Java program that counts the number of words in a given file and calculates the frequency of each word. The program then prints out various statistics about the words in the file, such as the total number of words, the most frequently occurring word, and any words that have the same highest frequency. The program takes a file name as input
