@@ -2,8 +2,8 @@
 This is a Java program that takes in a file path as an argument and then reads the file to count the number of words and their respective frequencies. It then prints out the following information:        
       
 
-1. The total number of words in the file.      
-2. The word(s) with the highest frequency and its frequency. 
+- The total number of words in the file.      
+- The word(s) with the highest frequency and its frequency. 
 
 Special cases:   
 
