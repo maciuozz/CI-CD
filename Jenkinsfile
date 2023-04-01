@@ -43,5 +43,11 @@ pipeline {
       }
     }
 
+    stage('Manual Approval') {
+      steps {
+        input(message: 'Would you like to deploy to production?', ok: 'Yes, go ahead!')
+      }
+    }
+
   }
 }
