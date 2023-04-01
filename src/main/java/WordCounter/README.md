@@ -1,10 +1,11 @@
 <h2>WORD FREQUENCY ANALYZER APPLICATION</h2>
-This is a Java program that takes in a file path as an argument and then reads the file to count the number of words and their respective frequencies. It then prints out the following information:
+This is a Java program that takes in a file path as an argument and then reads the file to count the number of words and their respective frequencies. It then prints out the following information:  
 
 1. The total number of words in the file.
 2. The word(s) with the highest frequency and its frequency. 
 
 Special cases:   
+
 a. If there is more than one word with the same highest frequency, it will print all of them along with the frequency.   
 b. If all words have the same frequency, it will indicate this along with the frequency.   
 c. If the file is empty, it will indicate this.   
