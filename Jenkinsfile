@@ -49,5 +49,11 @@ pipeline {
       }
     }
 
+    stage('Deploy') {
+      steps {
+        echo 'Deplyoment successful!'
+      }
+    }
+
   }
 }
