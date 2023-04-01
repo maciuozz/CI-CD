@@ -11,7 +11,14 @@ To check the connection run:
     sudo ssh jenkins@10.0.2.100
     sudo ssh jenkins@10.0.2.101
 
-***<h3>JENKINS NODES DEFINITION</h3>***
+***<h3>JENKINS NODES DEFINITION</h3>***  
+
+AGENT_11
+
+<img width="1792" alt="Screenshot 2023-04-02 at 01 50 45" src="https://user-images.githubusercontent.com/118285718/229323373-6ddde6c4-3412-4283-9d46-e0c146dcc408.png">
+
+
+
 
     
     
