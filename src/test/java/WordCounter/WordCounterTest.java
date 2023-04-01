@@ -24,7 +24,6 @@ public class WordCounterTest {
             WordCounter.main(new String[] {filePath.getAbsolutePath()});
 
             String actualOutput = removeAnsiEscapeCodes(outputStream.toString());
-            expectedOutput =removeAnsiEscapeCodes(expectedOutput.toString());
 
             assertThat(actualOutput, is(expectedOutput));
         } else {
@@ -65,7 +64,7 @@ public class WordCounterTest {
         File root = new File("/"); // Start the search from the root directory
         File filePath = searchForFile(root, fileName);
         if (filePath != null) {
-            String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 16.\n"
+            String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 16."
                             + "5 words have the same highest frequency of 2: \"meant\", \"be\", \"are\", \"to\", \"we\".";
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             System.setOut(new PrintStream(outputStream));
@@ -73,7 +72,6 @@ public class WordCounterTest {
             WordCounter.main(new String[] {filePath.getAbsolutePath()});
 
             String actualOutput = removeAnsiEscapeCodes(outputStream.toString());
-            expectedOutput =removeAnsiEscapeCodes(expectedOutput.toString());
 
             assertThat(actualOutput, is(expectedOutput));
         } else {
@@ -87,15 +85,14 @@ public class WordCounterTest {
         File root = new File("/"); // Start the search from the root directory
         File filePath = searchForFile(root, fileName);
         if (filePath != null) {
-            String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 10.\n"
-                            + "The most repeated word is \"beautiful\" with a frequency of 2.\n";
+            String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 10."
+                            + "The most repeated word is \"beautiful\" with a frequency of 2.";
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             System.setOut(new PrintStream(outputStream));
       
             WordCounter.main(new String[] {filePath.getAbsolutePath()});
 
             String actualOutput = removeAnsiEscapeCodes(outputStream.toString());
-            expectedOutput =removeAnsiEscapeCodes(expectedOutput.toString());
 
             assertThat(actualOutput, is(expectedOutput));
         } else {
@@ -109,15 +106,14 @@ public class WordCounterTest {
         File root = new File("/"); // Start the search from the root directory
         File filePath = searchForFile(root, fileName);
         if (filePath != null) {
-            String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 1.\n"
-                            + "The most repeated word is \"paolo\" with a frequency of 1.\n";
+            String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 1."
+                            + "The most repeated word is \"paolo\" with a frequency of 1.";
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             System.setOut(new PrintStream(outputStream));
       
             WordCounter.main(new String[] {filePath.getAbsolutePath()});
 
             String actualOutput = removeAnsiEscapeCodes(outputStream.toString());
-            expectedOutput =removeAnsiEscapeCodes(expectedOutput.toString());
 
             assertThat(actualOutput, is(expectedOutput));
         } else {
@@ -131,15 +127,14 @@ public class WordCounterTest {
         File root = new File("/"); // Start the search from the root directory
         File filePath = searchForFile(root, fileName);
         if (filePath != null) {
-            String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 8.\n"
-                            + "All words have the same frequency of 2.\n";
+            String expectedOutput = "The number of words in the file \"" + fileName + "\" is: 8."
+                            + "All words have the same frequency of 2.";
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             System.setOut(new PrintStream(outputStream));
       
             WordCounter.main(new String[] {filePath.getAbsolutePath()});
 
             String actualOutput = removeAnsiEscapeCodes(outputStream.toString());
-            expectedOutput =removeAnsiEscapeCodes(expectedOutput.toString());
 
             assertThat(actualOutput, is(expectedOutput));
         } else {
