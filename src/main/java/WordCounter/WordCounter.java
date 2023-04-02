@@ -108,13 +108,13 @@ public class WordCounter {
     public static String getAbsolutePathWithCheck(String fileName) {
         String absolutePath = null;
         try {
-            Process process = Runtime.getRuntime().exec(new String[] { "sudo", "find", "/", "-name", fileName, "-type", "f", "-print0" });
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8));
-            List<String> filePaths = new ArrayList<>();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                filePaths.add(line);
-            }
+            Path start = Paths.get("/");
+            int maxDepth = Integer.MAX_VALUE;
+            Predicate<Path> matcher = p -> p.getFileName().toString().equals(fileName) && Files.isRegularFile(p);
+
+            Stream<Path> matches = Files.find(start, maxDepth, matcher);
+            List<String> filePaths = matches.map(Path::toString).collect(Collectors.toList());
+
             int count = filePaths.size();
             if (count == 0) {
                 return null; // file not found
