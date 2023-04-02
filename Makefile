@@ -1,7 +1,7 @@
 
 FILE_NAME := texto.txt
 #Look for FILE_NAME in the entire file system starting from the root directory and set the FILE_PATH variable to its full path. If there is
-#more thatn 1 file with the same name, select the most recent one.
+#more than 1 file with the same name, select the most recent one.
 FILE_PATH := $(shell sudo find / -name "$(FILE_NAME)" -type f -printf '%T@ %p\n' 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)
 
 all: clean build test check_files exec
