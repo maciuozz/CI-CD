@@ -53,7 +53,7 @@ Within the context of this project, we have a parent job or project called 'Cron
 
 <img width="768" alt="Screenshot 2023-04-02 at 03 27 49" src="https://user-images.githubusercontent.com/118285718/229325845-27b9e6e7-6023-4efc-9393-4641de8e950a.png">
 
-Given that we have two agents available, I am going to assign this job to agent_11. In order to do so I need to select this option for both 'Cron-job' and 'Make-test-30':  
+Given that we have 2 agents available, I am going to assign this job to agent_11. In order to do so I need to select this option for both 'Cron-job' and 'Make-test-30':  
 
 <img width="831" alt="Screenshot 2023-04-02 at 03 14 45" src="https://user-images.githubusercontent.com/118285718/229325433-bcf1521b-7bfc-454f-ba12-f96378a16c3a.png">
 
