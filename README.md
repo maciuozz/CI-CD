@@ -21,4 +21,6 @@ In the Makefile there are 5 targets: ***clean, build, test, check_files, exec***
 
     make all
     
-The presence of 2 files named ***texto.txt*** with different paths, serves to demonstrate the calculation of the FILE_PATH variable in situations where multiple files share the same name.
+The presence of 2 files named ***texto.txt*** with different paths, serves to demonstrate the calculation of the FILE_PATH variable in situations where multiple files share the same name.  
+
+There are 3 README files: one for the ***src/main/java/WordCounter*** repository, another for the ***src/test/java/WordCounter*** repository and a third one for the DockerAgents-JenkinsNodes-Job repository.
