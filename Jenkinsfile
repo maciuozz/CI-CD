@@ -24,12 +24,6 @@ pipeline {
       }
     }
 
-    stage('Find file') {
-      steps {
-        sh 'make check_files'
-      }
-    }
-
     stage('Exec') {
       steps {
         sh 'make exec'
