@@ -35,7 +35,7 @@ public class WordCounter {
             return;
         }
 
-        String filePath = getAbsolutePathWithCheck(args[0]);
+        String filePath = findFile(args[0], "/");
         File inputFile = new File(filePath);
         if (!inputFile.exists()) {
             System.err.printf(ANSI_RED + "\n[ERROR] The file \"%s\" was not found or is not a valid file.\n" + ANSI_RESET, filePath);
@@ -109,39 +109,27 @@ public class WordCounter {
         }
     }
     
-    public static String getAbsolutePathWithCheck(String fileName) {
-        String absolutePath = null;
-        try {
-            Path start = Paths.get("/");
-            int maxDepth = Integer.MAX_VALUE;
-            BiPredicate<Path, BasicFileAttributes> matcher = (path, attr) ->
-                    path.getFileName().toString().equals(fileName) && attr.isRegularFile();
+    public static File findFile(String fileName, String directory) {
+        File folder = new File(directory);
+        File[] files = folder.listFiles((dir, name) -> name.equals(fileName));
 
-            Stream<Path> matches = Files.find(start, maxDepth, matcher);
-            List<String> filePaths = matches.map(Path::toString).collect(Collectors.toList());
-
-            int count = filePaths.size();
-            if (count == 0) {
-                return null; // file not found
-            } else if (count > 1) {
-                System.out.println("\n\033[1;33m[WARNING]\033[0m Found " + count + " files with the same name:");
-                for (String filePath : filePaths) {
-                    System.out.println("- " + filePath);
-                }
-                File[] files = new File[filePaths.size()];
-                for (int i = 0; i < filePaths.size(); i++) {
-                    files[i] = new File(filePaths.get(i));
-                }
-                Arrays.sort(files, Comparator.comparingLong(File::lastModified).reversed());
-                absolutePath = files[0].getAbsolutePath();
-                System.out.println("\nUsing the most recent file: " + absolutePath);
-            } else {
-                absolutePath = filePaths.get(0);
+        if (files == null || files.length == 0) {
+            return null;
+        } else if (files.length == 1) {
+            return files[0];
+        } else {
+            System.out.println("Found multiple files with the same name:");
+            for (File file : files) {
+                System.out.println(file.getAbsolutePath());
             }
-        } catch (IOException e) {
-              e.printStackTrace();
+            File mostRecentFile = Arrays.stream(files)
+                                        .max(Comparator.comparing(File::lastModified))
+                                        .orElse(null);
+            if (mostRecentFile != null) {
+                System.out.println("Using the most recent file: " + mostRecentFile.getAbsolutePath());
+            }
+            return mostRecentFile;
         }
-        return absolutePath;
     }
 
 }
