@@ -18,6 +18,7 @@ It also includes ANSI color codes for better visual presentation:
 
 <img width="917" alt="Screenshot 2023-04-02 at 05 43 13" src="https://user-images.githubusercontent.com/118285718/229330114-616b416f-913f-4531-a021-5edaa7162a44.png">
 
+<img width="889" alt="Screenshot 2023-04-02 at 05 48 38" src="https://user-images.githubusercontent.com/118285718/229330294-dd24c31c-621a-4822-8523-de349c9948d1.png">
 
 
 When attempting to pass a non-existent or empty name to the application, we get:  
