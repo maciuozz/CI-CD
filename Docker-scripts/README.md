@@ -31,20 +31,20 @@ This  Job DSL script defines a Jenkins job named "Make-test-30" with the followi
 - It checks out the code from the "main" branch.
 - It runs a single shell command, "make test", as the build step.  
     
-    job('Make-test-30') {
-        triggers {
-          cron('*/30 * * * *')
-        }
-        scm {
-            git {
-                remote {
-                    url('https://github.com/maciuozz/ci-cd-private.git')
-                    credentials('ci-cd-private')
+        job('Make-test-30') {
+            triggers {
+              cron('*/30 * * * *')
+            }
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/maciuozz/ci-cd-private.git')
+                        credentials('ci-cd-private')
+                    }
+                    branch('main')
                 }
-                branch('main')
+            }
+            steps {
+                shell('make test')
             }
         }
-        steps {
-            shell('make test')
-        }
-    }
