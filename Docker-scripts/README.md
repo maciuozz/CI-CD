@@ -48,3 +48,5 @@ This  Job DSL script defines a Jenkins job named "Make-test-30" with the followi
               shell('make test')
           }
       }
+  
+Given that we have two agents available, I am going to assign this job to agent_11 for execution while the pipeline itself will be be run on agent_22.
