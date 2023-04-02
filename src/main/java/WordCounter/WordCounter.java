@@ -1,22 +1,13 @@
 package main.java.count;
 
-import java.nio.file.attribute.BasicFileAttributes;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.function.BiPredicate;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.stream.Collectors;
+import java.util.*;
+import java.nio.file.*;
 import java.io.IOException;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+
 
 public class WordCounter {
 
@@ -110,6 +101,8 @@ public class WordCounter {
         }
     }
     
+    //The method searches for fileName in the file system, starting from the root directory. It uses the Files.walk() method to traverse the 
+    //directory tree and create a stream of all paths in the file system.
     public static String findFile(String fileName) {
         Path start = Paths.get("/");
         try (Stream<Path> stream = Files.walk(start)) {
