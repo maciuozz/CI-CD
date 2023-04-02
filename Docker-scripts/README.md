@@ -5,7 +5,7 @@ Log in as the jenkins user; then run the script ***run.sh*** to create 2 docker 
     sudo chmod +x run.sh  
     sudo ./run.sh  
 
-To check the connection run: 
+Check the connection by running: 
 
     sudo ssh jenkins@10.0.2.100
     sudo ssh jenkins@10.0.2.101
