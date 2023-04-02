@@ -25,7 +25,7 @@ public class WordCounter {
             return;
         }
 
-        String filePath = args[0];
+        String filePath = getAbsolutePathWithCheck(args[0]);
         File inputFile = new File(filePath);
         if (!inputFile.exists()) {
             System.err.printf(ANSI_RED + "\n[ERROR] The file \"%s\" was not found or is not a valid file.\n" + ANSI_RESET, filePath);
@@ -97,6 +97,40 @@ public class WordCounter {
         } else {
             System.out.printf(ANSI_MAGENTA + MULTIPLE_FREQ_MSG + "\n" + ANSI_RESET, highestFrequencyWords.size(), maxFrequency, "\"" + String.join("\", \"", highestFrequencyWords) + "\"" + "." + "\n");
         }
+    }
+    
+    public static String getAbsolutePathWithCheck(String fileName) {
+        String absolutePath = null;
+        try {
+            Process process = Runtime.getRuntime().exec(new String[] { "sudo", "find", "/", "-name", fileName, "-type", "f", "-print0" });
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8));
+            List<String> filePaths = new ArrayList<>();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                filePaths.add(line);
+            }
+            int count = filePaths.size();
+            if (count == 0) {
+                return null; // file not found
+            } else if (count > 1) {
+                System.out.println("\n\033[1;33m[WARNING]\033[0m Found " + count + " files with the same name:");
+                for (String filePath : filePaths) {
+                    System.out.println("- " + filePath);
+                }
+                File[] files = new File[filePaths.size()];
+                for (int i = 0; i < filePaths.size(); i++) {
+                    files[i] = new File(filePaths.get(i));
+                }
+                Arrays.sort(files, Comparator.comparingLong(File::lastModified).reversed());
+                absolutePath = files[0].getAbsolutePath();
+                System.out.println("\nUsing the most recent file: " + absolutePath);
+            } else {
+                absolutePath = filePaths.get(0);
+            }
+        } catch (IOException e) {
+              e.printStackTrace();
+        }
+        return absolutePath;
     }
 }
 
