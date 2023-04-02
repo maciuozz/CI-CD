@@ -113,7 +113,8 @@ public class WordCounter {
         try {
             Path start = Paths.get("/");
             int maxDepth = Integer.MAX_VALUE;
-            Predicate<Path> matcher = p -> p.getFileName().toString().equals(fileName) && Files.isRegularFile(p);
+            BiPredicate<Path, BasicFileAttributes> matcher = (path, attr) ->
+                    path.getFileName().toString().equals(fileName) && attr.isRegularFile();
 
             Stream<Path> matches = Files.find(start, maxDepth, matcher);
             List<String> filePaths = matches.map(Path::toString).collect(Collectors.toList());
@@ -141,5 +142,6 @@ public class WordCounter {
         }
         return absolutePath;
     }
+
 }
 
