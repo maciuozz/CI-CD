@@ -12,4 +12,7 @@ b. If all words have the same frequency, it will indicate this along with the fr
 c. If the file is empty, it will indicate this.   
  
 The program uses a regular expression pattern to define the delimiter for parsing the input file. This pattern matches any non-letter character or apostrophe, so it effectively splits the input file into words and discards any non-alphabetic characters or apostrophes. By doing so, it ensures that only valid words are counted and their frequencies are correctly calculated.
-It also includes ANSI color codes for better visual presentation.  
+It also includes ANSI color codes for better visual presentation:  
+
+
+<img width="892" alt="Screenshot 2023-03-31 at 12 56 02" src="https://user-images.githubusercontent.com/118285718/229329252-4d188cd0-411a-4e23-8f36-3354ad74510c.png">
