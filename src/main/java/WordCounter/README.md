@@ -15,7 +15,8 @@ The program uses a regular expression pattern to define the delimiter for parsin
 It also includes ANSI color codes for better visual presentation:  
 
 <img width="1376" alt="Screenshot 2023-04-02 at 14 20 49" src="https://user-images.githubusercontent.com/118285718/229352854-28d48a72-70a5-4475-8c72-f0cfc41814b6.png">
-
+<img width="1375" alt="Screenshot 2023-04-02 at 14 16 54" src="https://user-images.githubusercontent.com/118285718/229352885-000fdf8f-eab2-4739-b2f1-6416634d59d6.png">
+<img width="1374" alt="Screenshot 2023-04-02 at 14 25 25" src="https://user-images.githubusercontent.com/118285718/229352895-073a48cd-3cc1-4d9d-a0b2-646d951dfbaa.png">
 
 When attempting to pass a non-existent or empty name to the application, we get:  
 
