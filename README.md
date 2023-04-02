@@ -38,7 +38,7 @@ Download the artifact on your computer by accessing the "Artifacts" section in t
 
 Run the following command:  
 
-   java -jar myapp-0.0.1.jar <path/to-the/text-file.txt>
+    java -jar myapp-0.0.1.jar <path/to-the/text-file.txt>
 
 
 
