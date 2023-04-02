@@ -1,7 +1,7 @@
 # Practica CI-CD Paolo Scotto Di Mase
 
 For this project, I utilized a virtual machine running Ubuntu 22.04 as the environment for Jenkins. I used 2 docker agents that connect to 2 Jenkins nodes.
-I created the VM using the Vagrant script below: 
+I created the VM with the Vagrant script below: 
 
     Vagrant.configure("2") do |config|
         config.vm.define "cicd-vm" do |cicd|
@@ -16,3 +16,7 @@ I created the VM using the Vagrant script below:
             end
         end
     end
+    
+In the Makefile there are 5 targets: ***clean, build, test, check_files, exec***. It is possible to execute all targets using a single command:
+
+    make all
