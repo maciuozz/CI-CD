@@ -32,13 +32,20 @@ The Jenkins file displays all the steps involved in building the pipeline. Note 
 <img width="1791" alt="Screenshot 2023-04-01 at 12 44 27" src="https://user-images.githubusercontent.com/118285718/229328962-be4bb864-92cf-4ccb-925c-533b52acb0fc.png">
 <img width="1790" alt="Screenshot 2023-04-01 at 12 48 20" src="https://user-images.githubusercontent.com/118285718/229328955-0f5f3880-0b0b-4e08-b529-2995c3b79cf8.png">
 
-Download the artifact on your computer by accessing the "Artifacts" section in the Jenkins interface:  
+Download the artifact by accessing the "Artifacts" section in the Jenkins interface:  
 
 <img width="1792" alt="Screenshot 2023-04-02 at 14 38 54" src="https://user-images.githubusercontent.com/118285718/229353309-61370a6f-f69c-43e7-b4ce-58b8bb3cf559.png">
 
 Run the following command:  
 
     java -jar myapp-0.0.1.jar <path/to-the/text-file.txt>
+    
+Below is an example of running the application after downloading the artifact to a different environment, showcasing 3 different scenarios:
+
+1. The application is executed with no text file argument provided.
+2. The application is executed with a valid text file argument.
+3. The application is executed with a non-valid text file argument.
+<img width="1373" alt="Screenshot 2023-04-02 at 14 47 01" src="https://user-images.githubusercontent.com/118285718/229353911-f1bc4973-a643-45db-a1d1-c38f58e2a9d1.png">
 
 
 
