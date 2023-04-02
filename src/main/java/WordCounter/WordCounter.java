@@ -31,17 +31,18 @@ public class WordCounter {
 
     public static void main(String[] args) {
         if (args.length == 0) {
-            System.err.println(ANSI_RED + "\n[ERROR] Please, provide a valid file name.\n" + ANSI_RESET);
+            System.err.println(ANSI_RED + "\n[ERROR] Please, provide a file name.\n" + ANSI_RESET);
             return;
         }
 
-        String filePath = findFile(args[0], "/");
+        String filePath = findFile(args[0]);
+        if (filePath == null) {
+            System.err.printf(ANSI_RED + "\n[ERROR] The file \"%s\" was not found or is not a valid file.\n" + ANSI_RESET, args[0]);
+            System.err.println();
+            return;
+        }
+        
         File inputFile = new File(filePath);
-        if (!inputFile.exists()) {
-            System.err.printf(ANSI_RED + "\n[ERROR] The file \"%s\" was not found or is not a valid file.\n" + ANSI_RESET, filePath);
-            return;
-        }
-
         //Create a Scanner object to read the input file and use the delimiter.
         try (Scanner scanner = new Scanner(inputFile).useDelimiter("[^\\p{L}']+")) {
             //Pass the Scanner object to the countWordsAndGetFrequencies method, which returns a Map containing the frequency of each word in the file.
@@ -109,26 +110,33 @@ public class WordCounter {
         }
     }
     
-    public static File findFile(String fileName, String directory) {
-        File folder = new File(directory);
-        File[] files = folder.listFiles((dir, name) -> name.equals(fileName));
+    public static String findFile(String fileName) {
+        Path start = Paths.get("/");
+        try (Stream<Path> stream = Files.walk(start)) {
+            List<String> paths = stream
+                    .filter(path -> Files.isRegularFile(path))
+                    .filter(path -> path.getFileName().toString().equals(fileName))
+                    .map(Path::toString)
+                    .collect(Collectors.toList());
 
-        if (files == null || files.length == 0) {
+            if (paths.isEmpty()) {
+                return null;
+            } else if (paths.size() == 1) {
+                return paths.get(0);
+            } else {
+                System.out.println(String.format("\n\033[93m[WARNING]\033[0m Found %d files with the same name:", paths.size()));
+                paths.forEach(path -> System.out.println("- " + path));
+                String mostRecentFile = paths.stream()
+                                             .max(Comparator.comparingLong(path -> new File(path).lastModified()))
+                                             .orElse(null);
+                if (mostRecentFile != null) {
+                    System.out.println("\n[INFO] Using the most recent file: " + mostRecentFile);
+                }
+                return mostRecentFile;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
             return null;
-        } else if (files.length == 1) {
-            return files[0];
-        } else {
-            System.out.println("Found multiple files with the same name:");
-            for (File file : files) {
-                System.out.println(file.getAbsolutePath());
-            }
-            File mostRecentFile = Arrays.stream(files)
-                                        .max(Comparator.comparing(File::lastModified))
-                                        .orElse(null);
-            if (mostRecentFile != null) {
-                System.out.println("Using the most recent file: " + mostRecentFile.getAbsolutePath());
-            }
-            return mostRecentFile;
         }
     }
 
