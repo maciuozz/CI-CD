@@ -1,6 +1,6 @@
 # Practica CI-CD Paolo Scotto Di Mase
 
-There are 3 more README files: one for the ***src/main/java/WordCounter*** repository, another for the ***src/test/java/WordCounter*** repository and a third one for the DockerAgents-JenkinsNodes-Job repository.  
+There are 3 more README files: one for the ***src/main/java/WordCounter*** repository, another for the ***src/test/java/WordCounter*** repository and a third one for the ***DockerAgents-JenkinsNodes-Job*** repository.  
 For this project, I utilized a virtual machine running Ubuntu 22.04 as the environment for Jenkins. I used 2 docker agents that connect to 2 Jenkins nodes.
 The pipeline is run using agent_22, while agent_11 is designated for the job that exclusively runs the tests. I created the VM with the Vagrant script below: 
 
