@@ -14,6 +14,8 @@ c. If the file is empty, it will indicate this.
 The program uses a regular expression pattern to define the delimiter for parsing the input file. This pattern matches any non-letter character or apostrophe, so it effectively splits the input file into words and discards any non-alphabetic characters or apostrophes. By doing so, it ensures that only valid words are counted and their frequencies are correctly calculated.
 It also includes ANSI color codes for better visual presentation:  
 
+<img width="1376" alt="Screenshot 2023-04-02 at 14 20 49" src="https://user-images.githubusercontent.com/118285718/229352854-28d48a72-70a5-4475-8c72-f0cfc41814b6.png">
+
 
 When attempting to pass a non-existent or empty name to the application, we get:  
 
