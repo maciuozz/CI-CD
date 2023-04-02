@@ -22,9 +22,14 @@ AGENT_22
 <img width="1791" alt="Screenshot 2023-04-02 at 02 02 15" src="https://user-images.githubusercontent.com/118285718/229323480-5183eb80-72aa-40a4-8cc8-1a2a88579e05.png">
 <img width="1783" alt="Screenshot 2023-04-02 at 02 03 41" src="https://user-images.githubusercontent.com/118285718/229323509-44281ac5-8d7b-4954-b049-a1aecc9583b5.png">
 
-***<h3>JOB DSL</h3>
+***<h3>JOB DSL</h3>***  
 
-    
+This  Job DSL script defines a Jenkins job named "Make-test-30" with the following configuration:  
+
+- It is triggered every 30 minutes using a cron schedule.
+- It uses Git as the source code management (SCM) system, with a specific remote URL and Git credentials.
+- It checks out the code from the "main" branch.
+- It runs a single shell command, "make test", as the build step.
     
     job('Make-test-30') {
         triggers {
