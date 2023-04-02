@@ -1,5 +1,6 @@
 # Practica CI-CD Paolo Scotto Di Mase
 
+There are 3 more README files: one for the ***src/main/java/WordCounter*** repository, another for the ***src/test/java/WordCounter*** repository and a third one for the DockerAgents-JenkinsNodes-Job repository.  
 For this project, I utilized a virtual machine running Ubuntu 22.04 as the environment for Jenkins. I used 2 docker agents that connect to 2 Jenkins nodes.
 I created the VM with the Vagrant script below: 
 
@@ -23,4 +24,4 @@ In the Makefile there are 5 targets: ***clean, build, test, check_files, exec***
     
 The presence of 2 files named ***texto.txt*** with different paths, serves to demonstrate the calculation of the FILE_PATH variable in situations where multiple files share the same name.  
 
-There are 3 more README files: one for the ***src/main/java/WordCounter*** repository, another for the ***src/test/java/WordCounter*** repository and a third one for the DockerAgents-JenkinsNodes-Job repository.
+
