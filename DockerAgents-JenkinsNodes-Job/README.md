@@ -1,6 +1,6 @@
 <h2>DOCKER AGENTS - JENKINS NODES - JOB</h2>  
 
-Log in as the jenkins user; then run the script ***run.sh*** to create 2 docker agents that will be connected to 2 jenkins nodes:  
+Log in as the jenkins user; then run the script ***run.sh*** to create 2 docker agents that will be connected to 2 Jenkins nodes:  
 
     sudo chmod +x run.sh  
     sudo ./run.sh  
