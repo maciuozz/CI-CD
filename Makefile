@@ -4,7 +4,7 @@ FILE_NAME := texto.txt
 all: clean build test exec
 
 clean:
-	@:xmvn clean -q
+	@mvn clean -q
 
 build:
 	@mvn compile -q
