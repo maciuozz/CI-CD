@@ -91,7 +91,7 @@ public class WordCounter {
     private static void printResults(String fileName, int numWords, Map<String, Integer> wordFreq, int maxFrequency, List<String> highestFrequencyWords) {
         System.out.printf(ANSI_MAGENTA + NUM_WORDS_MSG + "\n" + ANSI_RESET, fileName, numWords);
         if (wordFreq.isEmpty()) {
-            System.out.println(ANSI_MAGENTA + "The file is empty." + ANSI_RESET);
+            System.out.println(ANSI_MAGENTA + "The file is empty.\n" + ANSI_RESET);
         } else if (highestFrequencyWords.size() == 1) {
             System.out.printf(ANSI_MAGENTA + MOST_FREQ_MSG + "\n" + ANSI_RESET, highestFrequencyWords.get(0), maxFrequency);
         } else if (wordFreq.size() == highestFrequencyWords.size()) {
