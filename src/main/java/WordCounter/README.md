@@ -13,7 +13,7 @@ c. If the file is empty, it will indicate this.
 d. If we pass a non-existent file or an empty name, it will indicate this.  
 e. If there are more files with the same name in different paths, it will indicate this.  
 
-It looks for the file in the current directory and all of its subdirectories, and in case there are multiple files with the same name but different paths, it issues a warning message and selects the most recent one.
+It looks for the file in the current user's home directory and its subdirectories and in case there are multiple files with the same name but different paths, it issues a warning message and selects the most recent one.
 
 The program uses a regular expression pattern to define the delimiter for parsing the input file. This pattern matches any non-letter character or apostrophe, so it effectively splits the input file into words and discards any non-alphabetic characters or apostrophes. By doing so, it ensures that only valid words are counted and their frequencies are correctly calculated.
 It also includes ANSI color codes for better visual presentation:  
