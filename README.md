@@ -28,6 +28,8 @@ The Jenkins file displays all the steps involved in building the pipeline. Note 
 
 <img width="1783" alt="Screenshot 2023-04-03 at 13 29 43" src="https://user-images.githubusercontent.com/118285718/229496877-042b2467-bfd2-42ed-8f51-d2e9c993519e.png">
 <img width="1792" alt="Screenshot 2023-04-03 at 13 23 26" src="https://user-images.githubusercontent.com/118285718/229496366-86f486b4-6bed-41ab-8961-e6ff5575e25c.png">
+<img width="1790" alt="Screenshot 2023-04-03 at 13 35 52" src="https://user-images.githubusercontent.com/118285718/229498165-c13a939f-01d4-47d4-9b50-5d1049bbe858.png">
+
 <img width="1789" alt="Screenshot 2023-04-03 at 13 31 09" src="https://user-images.githubusercontent.com/118285718/229497391-e1cbd8c2-4127-4d20-9882-992a9e925d1d.png">
 <img width="1785" alt="Screenshot 2023-04-03 at 13 31 38" src="https://user-images.githubusercontent.com/118285718/229497405-9e272dd4-9219-4415-9dff-382739e12d76.png">
 
