@@ -26,10 +26,8 @@ pipeline {
 
     stage('Exec') {
       steps {
-        ansiColor(colorMapName: 'yellow') {
-          sh 'make exec'
-        }
-
+        sh '''make exec
+'''
       }
     }
 
