@@ -25,7 +25,7 @@ public class WordCounterTest {
 
         String actualOutput = removeAnsiEscapeCodes(outputStream.toString());
 
-        //Verify that the actualOutput variable is equal to the expectedOutput variable using the is() matcher from the Hamcrest library.
+        //Verify whether the actual output string contains the expected output string.
         assertThat(actualOutput, containsString(expectedOutput));
     }
 
