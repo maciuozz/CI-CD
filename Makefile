@@ -4,7 +4,7 @@ FILE_NAME := texto.txt
 all: clean build test exec
 
 clean:
-	@sudo mvn clean -q
+	@mvn clean -q
 
 build:
 	@mvn compile -q
@@ -18,7 +18,7 @@ test:
 	@echo "\n[INFO] Running testHighestFrequency...";
 	@echo "\n[INFO] Running testOneWord...";
 	@echo "\n[INFO] Running testAllSameFrequency...";
-	@sudo mvn test -q 
+	@mvn test -q 
 
 exec:
 	@mvn exec:java -Dexec.args="$(FILE_NAME)" -q
