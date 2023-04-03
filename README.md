@@ -45,7 +45,9 @@ Below is an example of running the application after downloading the artifact to
 1. The application is executed with no text file argument provided.
 2. The application is executed with a valid text file argument.
 3. The application is executed with a non-valid text file argument.
-<img width="1373" alt="Screenshot 2023-04-02 at 14 47 01" src="https://user-images.githubusercontent.com/118285718/229353911-f1bc4973-a643-45db-a1d1-c38f58e2a9d1.png">
+
+<img width="1396" alt="Screenshot 2023-04-03 at 13 06 20" src="https://user-images.githubusercontent.com/118285718/229492344-768b0d82-6cdf-4d5f-8cbc-7ce15b8569d5.png">
+
 
 
 
