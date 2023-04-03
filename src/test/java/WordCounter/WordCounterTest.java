@@ -122,4 +122,4 @@ public class WordCounterTest {
         return str.replaceAll("\\u001B\\[[;\\d]*m", "").replaceAll("\\r\\n|\\n|\\r", System.lineSeparator().trim());
     }
 
-}
+} 
