@@ -21,6 +21,8 @@ It also includes ANSI color codes for better visual presentation:
 <img width="1363" alt="Screenshot 2023-04-03 at 12 23 25" src="https://user-images.githubusercontent.com/118285718/229485019-e809eed0-c50d-4c26-a0f3-dc9ab1047dee.png">
 <img width="1364" alt="Screenshot 2023-04-03 at 12 27 18" src="https://user-images.githubusercontent.com/118285718/229485065-5f4ad5ca-b6e3-4e85-b941-dea4f161b821.png">
 <img width="1360" alt="Screenshot 2023-04-03 at 12 30 02" src="https://user-images.githubusercontent.com/118285718/229485083-b356be68-267c-49ed-b1cf-5ac7bf11c5c0.png">
+<img width="1398" alt="Screenshot 2023-04-03 at 13 18 51" src="https://user-images.githubusercontent.com/118285718/229495019-9bb0802f-f2f3-4d2b-a804-932177d091f2.png">
+
 
 
 
