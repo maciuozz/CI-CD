@@ -20,10 +20,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        ansiColor(colorMapName: 'yellow') {
-          sh 'make test'
-        }
-
+        sh 'make test'
       }
     }
 
