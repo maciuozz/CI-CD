@@ -18,7 +18,7 @@ test:
 	@echo "\n[INFO] Running testHighestFrequency...";
 	@echo "\n[INFO] Running testOneWord...";
 	@echo "\n[INFO] Running testAllSameFrequency...";
-	@mvn test -q 
+	@sudo mvn test -q 
 
 exec:
 	@mvn exec:java -Dexec.args="$(FILE_NAME)" -q
