@@ -18,8 +18,7 @@ It looks for the file in the current user's home directory and its subdirectorie
 The program uses a regular expression pattern to define the delimiter for parsing the input file. This pattern matches any non-letter character or apostrophe, so it effectively splits the input file into words and discards any non-alphabetic characters or apostrophes. By doing so, it ensures that only valid words are counted and their frequencies are correctly calculated.
 It also includes ANSI color codes for better visual presentation:  
 
-<img width="1476" alt="Screenshot 2023-04-04 at 01 53 08" src="https://user-images.githubusercontent.com/118285718/229651655-35f97519-1f24-47f7-94bc-150fc7e95f8f.png">
-
+<img width="1507" alt="Screenshot 2023-04-04 at 01 55 47" src="https://user-images.githubusercontent.com/118285718/229651941-f77e5dfe-495b-4907-846a-a974cfd01818.png">
 <img width="1364" alt="Screenshot 2023-04-03 at 12 27 18" src="https://user-images.githubusercontent.com/118285718/229485065-5f4ad5ca-b6e3-4e85-b941-dea4f161b821.png">
 <img width="1360" alt="Screenshot 2023-04-03 at 12 30 02" src="https://user-images.githubusercontent.com/118285718/229485083-b356be68-267c-49ed-b1cf-5ac7bf11c5c0.png">
 <img width="1398" alt="Screenshot 2023-04-03 at 13 18 51" src="https://user-images.githubusercontent.com/118285718/229495019-9bb0802f-f2f3-4d2b-a804-932177d091f2.png">
