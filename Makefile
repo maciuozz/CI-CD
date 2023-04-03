@@ -1,5 +1,5 @@
 
-FILE_NAME := texto.txt
+FILE_NAME := non-existent.txt
 
 all: clean build test exec
 
