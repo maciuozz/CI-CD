@@ -13,6 +13,7 @@ c. If the file is empty, it will indicate this.
  
 The program uses a regular expression pattern to define the delimiter for parsing the input file. This pattern matches any non-letter character or apostrophe, so it effectively splits the input file into words and discards any non-alphabetic characters or apostrophes. By doing so, it ensures that only valid words are counted and their frequencies are correctly calculated.
 It also includes ANSI color codes for better visual presentation:  
+
 <img width="1363" alt="Screenshot 2023-04-03 at 12 23 25" src="https://user-images.githubusercontent.com/118285718/229485019-e809eed0-c50d-4c26-a0f3-dc9ab1047dee.png">
 <img width="1364" alt="Screenshot 2023-04-03 at 12 27 18" src="https://user-images.githubusercontent.com/118285718/229485065-5f4ad5ca-b6e3-4e85-b941-dea4f161b821.png">
 <img width="1360" alt="Screenshot 2023-04-03 at 12 30 02" src="https://user-images.githubusercontent.com/118285718/229485083-b356be68-267c-49ed-b1cf-5ac7bf11c5c0.png">
