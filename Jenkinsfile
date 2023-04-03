@@ -33,7 +33,7 @@ pipeline {
 
     stage('Package & Save') {
       steps {
-        sh 'sudo mvn jar:jar'
+        sh 'mvn jar:jar'
         archiveArtifacts 'target/*.jar'
       }
     }
