@@ -38,7 +38,7 @@ Download the artifact by accessing the "Artifacts" section in the Jenkins interf
 
 Run the following command:  
 
-    java -jar myapp-0.0.1.jar <path/to-the/text-file.txt>
+    java -jar myapp-0.0.1.jar <text-file.txt>
     
 Below is an example of running the application after downloading the artifact to a different environment, showcasing 4 different scenarios:
 
