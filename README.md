@@ -26,7 +26,7 @@ The presence of 2 files named ***texto.txt*** with different paths, serves to de
 
 The Jenkins file displays all the steps involved in building the pipeline. Note that the ***deploy*** step is intended solely for illustrative purposes and its function is limited to printing a message. Here are some pictures:  
 
-<img width="1792" alt="Screenshot 2023-04-03 at 13 28 18" src="https://user-images.githubusercontent.com/118285718/229496621-21612f5b-fba9-46bc-aa4c-69a1777b4611.png">
+<img width="1783" alt="Screenshot 2023-04-03 at 13 29 43" src="https://user-images.githubusercontent.com/118285718/229496877-042b2467-bfd2-42ed-8f51-d2e9c993519e.png">
 
 <img width="1792" alt="Screenshot 2023-04-03 at 13 23 26" src="https://user-images.githubusercontent.com/118285718/229496366-86f486b4-6bed-41ab-8961-e6ff5575e25c.png">
 
