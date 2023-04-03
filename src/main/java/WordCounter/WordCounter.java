@@ -104,7 +104,7 @@ public class WordCounter {
     //The method searches for a file with the specified name in the current directory and all of its subdirectories. It uses the Files.walk()
     //method to traverse the directory tree and create a stream of all paths in the file system.
     public static String findFile(String fileName) {
-        Path start = Paths.get(".");
+        Path start = Paths.get("/");
         try (Stream<Path> stream = Files.walk(start)) {
             List<String> paths = stream
                     .filter(path -> Files.isRegularFile(path))
