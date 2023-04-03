@@ -27,11 +27,9 @@ The presence of 2 files named ***texto.txt*** with different paths, serves to de
 The Jenkins file displays all the steps involved in building the pipeline. Note that the ***deploy*** step is intended solely for illustrative purposes and its function is limited to printing a message. Here are some pictures:  
 
 <img width="1783" alt="Screenshot 2023-04-03 at 13 29 43" src="https://user-images.githubusercontent.com/118285718/229496877-042b2467-bfd2-42ed-8f51-d2e9c993519e.png">
-
 <img width="1792" alt="Screenshot 2023-04-03 at 13 23 26" src="https://user-images.githubusercontent.com/118285718/229496366-86f486b4-6bed-41ab-8961-e6ff5575e25c.png">
-
-<img width="1791" alt="Screenshot 2023-04-01 at 12 44 27" src="https://user-images.githubusercontent.com/118285718/229328962-be4bb864-92cf-4ccb-925c-533b52acb0fc.png">
-<img width="1790" alt="Screenshot 2023-04-01 at 12 48 20" src="https://user-images.githubusercontent.com/118285718/229328955-0f5f3880-0b0b-4e08-b529-2995c3b79cf8.png">
+<img width="1789" alt="Screenshot 2023-04-03 at 13 31 09" src="https://user-images.githubusercontent.com/118285718/229497391-e1cbd8c2-4127-4d20-9882-992a9e925d1d.png">
+<img width="1785" alt="Screenshot 2023-04-03 at 13 31 38" src="https://user-images.githubusercontent.com/118285718/229497405-9e272dd4-9219-4415-9dff-382739e12d76.png">
 
 Download the artifact by accessing the "Artifacts" section in the Jenkins interface:  
 
