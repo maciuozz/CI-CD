@@ -4,10 +4,10 @@ FILE_NAME := non-existent.txt
 all: clean build test exec
 
 clean:
-	@mvn clean -q
+	@sudo mvn clean -q
 
 build:
-	@mvn compile -q
+	@sudo mvn compile -q
 
 
 test:
@@ -18,8 +18,8 @@ test:
 	@echo "\n[INFO] Running testHighestFrequency...";
 	@echo "\n[INFO] Running testOneWord...";
 	@echo "\n[INFO] Running testAllSameFrequency...";
-	@mvn test -q 
+	@sudo mvn test -q 
 
 exec:
-	@mvn exec:java -Dexec.args="$(FILE_NAME)" -q
+	@sudo mvn exec:java -Dexec.args="$(FILE_NAME)" -q
 
