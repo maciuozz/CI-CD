@@ -40,13 +40,15 @@ Run the following command:
 
     java -jar myapp-0.0.1.jar <path/to-the/text-file.txt>
     
-Below is an example of running the application after downloading the artifact to a different environment, showcasing 3 different scenarios:
+Below is an example of running the application after downloading the artifact to a different environment, showcasing 4 different scenarios:
 
-1. The application is executed with no text file argument provided.
-2. The application is executed with a valid text file argument.
-3. The application is executed with a non-valid text file argument.
+1. The application is run without providing any text file argument.
+2. The application is run with a valid text file argument.
+3. The application is run with a valid text file argument that exists in multiple paths.
+4. The application is run with an invalid text file argument.
 
-<img width="1389" alt="Screenshot 2023-04-03 at 13 07 45" src="https://user-images.githubusercontent.com/118285718/229492567-90f217bd-ad31-4fd5-988f-615726a75a5d.png">
+<img width="1397" alt="Screenshot 2023-04-03 at 13 09 57" src="https://user-images.githubusercontent.com/118285718/229493010-4ef442b9-8786-4274-b95b-760a179fe939.png">
+
 
 
 
