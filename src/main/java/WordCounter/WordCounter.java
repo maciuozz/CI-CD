@@ -136,7 +136,5 @@ public class WordCounter {
         }
     }
 
-  }
-
 }
 
