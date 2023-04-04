@@ -108,7 +108,15 @@ public class WordCounter {
         Path start = Paths.get(homeDir);
         try (Stream<Path> stream = Files.walk(start)) {
             List<String> paths = stream
-                    .filter(path -> !Files.isHidden(path))
+                    .filter(path -> {
+                        try {
+                            return !Files.isHidden(path);
+                        } catch (IOException e) {
+                            // Handle the exception here
+                            System.err.println("An error occurred while filtering paths: " + e.getMessage());
+                            return false; // Don't scan hidden directories
+                        }
+                    })
                     .filter(path -> Files.isRegularFile(path))
                     .filter(path -> path.getFileName().toString().equals(fileName))
                     .map(Path::toString)
@@ -134,6 +142,7 @@ public class WordCounter {
               return null;
         }
     }
+
 
 }
 
