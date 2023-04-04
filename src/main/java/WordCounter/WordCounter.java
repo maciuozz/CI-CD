@@ -104,9 +104,12 @@ public class WordCounter {
     //The method searches for a file with the specified name in the current user's home directory and its subdirectories. It uses the Files.walk()
     //method to traverse the directory tree and create a stream of all paths in the file system.
     public static String findFile(String fileName) {
-        Path start = Paths.get(".");
+        String homeDir = System.getProperty("user.home"); 
+        Path start = Paths.get(homeDir);
         try (Stream<Path> stream = Files.walk(start)) {
             List<String> paths = stream
+                    //.filter(path -> !Files.isHidden(path))
+                    .filter(path -> !path.toString().contains("/."))
                     .filter(path -> Files.isRegularFile(path))
                     .filter(path -> path.getFileName().toString().equals(fileName))
                     .map(Path::toString)
@@ -128,11 +131,12 @@ public class WordCounter {
                 return mostRecentFile;
             }
         } catch (IOException e) {
-            e.printStackTrace();
-            return null;
+              System.err.println("An error occurred while searching for file: " + e.getMessage());
+              return null;
         }
- 
     }
+
+  }
 
 }
 
