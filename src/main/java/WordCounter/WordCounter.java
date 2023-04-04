@@ -109,6 +109,7 @@ public class WordCounter {
         try (Stream<Path> stream = Files.walk(start)) {
             List<String> paths = stream
                     .filter(path -> Files.isRegularFile(path))
+                    .filter(path -> !path.startsWith("/Users/paoloscotto/Library/Application Support/CallHistoryTransactions"))
                     .filter(path -> path.getFileName().toString().equals(fileName))
                     .map(Path::toString)
                     .collect(Collectors.toList());
