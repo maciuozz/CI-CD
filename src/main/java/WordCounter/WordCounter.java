@@ -104,26 +104,32 @@ public class WordCounter {
     //The method searches for a file with the specified name in the current user's home directory and its subdirectories. It uses the Files.walk()
     //method to traverse the directory tree and create a stream of all paths in the file system.
     public static String findFile(String fileName) {
-        String homeDir = System.getProperty("user.home"); // get the path to the current user's home directory
-        File startDir = new File(homeDir);
-        File[] files = startDir.listFiles((dir, name) -> name.equals(fileName));
+        Path start = Paths.get(".");
+        try (Stream<Path> stream = Files.walk(start)) {
+            List<String> paths = stream
+                    .filter(path -> Files.isRegularFile(path))
+                    .filter(path -> path.getFileName().toString().equals(fileName))
+                    .map(Path::toString)
+                    .collect(Collectors.toList());
 
-        if (files == null || files.length == 0) {
+            if (paths.isEmpty()) {
+                return null;
+            } else if (paths.size() == 1) {
+                return paths.get(0);
+            } else {
+                System.out.println(String.format("\n\033[93m[WARNING]\033[0m Found %d files with the same name:", paths.size()));
+                paths.forEach(path -> System.out.println("- " + path));
+                String mostRecentFile = paths.stream()
+                                             .max(Comparator.comparingLong(path -> new File(path).lastModified()))
+                                             .orElse(null);
+                if (mostRecentFile != null) {
+                    System.out.println("\n[INFO] Using the most recent file: " + mostRecentFile);
+                }
+                return mostRecentFile;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
             return null;
-        } else if (files.length == 1) {
-            return files[0].getAbsolutePath();
-        } else {
-            System.out.println(String.format("\n[WARNING] Found %d files with the same name:", files.length));
-            for (File file : files) {
-                System.out.println("- " + file.getAbsolutePath());
-            }
-            File mostRecentFile = Arrays.stream(files)
-                                        .max(Comparator.comparingLong(File::lastModified))
-                                        .orElse(null);
-            if (mostRecentFile != null) {
-                System.out.println("\n[INFO] Using the most recent file: " + mostRecentFile.getAbsolutePath());
-            }
-            return mostRecentFile.getAbsolutePath();
         }
     }
 }
