@@ -130,8 +130,8 @@ public class WordCounter {
                 return mostRecentFile;
             }
         } catch (IOException e) {
-            e.printStackTrace();
-            return null;
+              System.err.println("An error occurred while searching for file: " + e.getMessage());
+              return null;
         }
     }
 
