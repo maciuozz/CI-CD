@@ -108,6 +108,7 @@ public class WordCounter {
         Path start = Paths.get(homeDir);
         try (Stream<Path> stream = Files.walk(start)) {
             List<String> paths = stream
+                    .filter(path -> !Files.isHidden(path))
                     .filter(path -> Files.isRegularFile(path))
                     .filter(path -> path.getFileName().toString().equals(fileName))
                     .map(Path::toString)
