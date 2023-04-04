@@ -119,6 +119,7 @@ public class WordCounter {
                     })
                     .filter(path -> Files.isRegularFile(path))
                     .filter(path -> path.getFileName().toString().equals(fileName))
+                    .filter(path -> !path.startsWith(Paths.get(homeDir, "Library")))
                     .map(Path::toString)
                     .collect(Collectors.toList());
 
@@ -140,10 +141,7 @@ public class WordCounter {
         } catch (IOException e) {
               System.err.println("An error occurred while searching for file: " + e.getMessage());
               return null;
-        } catch (AccessDeniedException e) {
-              System.err.println("Access to the file or directory was denied: " + e.getMessage());
-              return null;
-        }
+        } 
     }   
 
 }
