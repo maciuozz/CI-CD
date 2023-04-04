@@ -140,9 +140,11 @@ public class WordCounter {
         } catch (IOException e) {
               System.err.println("An error occurred while searching for file: " + e.getMessage());
               return null;
+        } catch (AccessDeniedException e) {
+              System.err.println("Access to the file or directory was denied: " + e.getMessage());
+              return null;
         }
-    }
-
+    }   
 
 }
 
