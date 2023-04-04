@@ -101,7 +101,7 @@ public class WordCounter {
         }
     }
     
-    //The method searches for a file with the specified name in the current user's home directory and its subdirectories. It uses the Files.walk()
+    //The method searches for a file with the specified name in the current directory and its subdirectories. It uses the Files.walk()
     //method to traverse the directory tree and create a stream of all paths in the file system.
     public static String findFile(String fileName) {
         Path start = Paths.get(".");
