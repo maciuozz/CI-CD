@@ -124,6 +124,7 @@ public class WordCounter {
     }
 
     return null; // return null if the file was not found
-
+  }
 }
+    
 
