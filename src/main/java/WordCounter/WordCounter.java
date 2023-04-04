@@ -103,37 +103,27 @@ public class WordCounter {
     
     //The method searches for a file with the specified name in the current user's home directory and its subdirectories. It uses the Files.walk()
     //method to traverse the directory tree and create a stream of all paths in the file system.
-    public static String findFile(String fileName) {
-        String homeDir = System.getProperty("user.home"); // get the path to the current user's home directory
-        Path start = Paths.get(homeDir);
-        try (Stream<Path> stream = Files.walk(start)) {
-            List<String> paths = stream
-                    .filter(path -> Files.isRegularFile(path))
-                    .filter(path -> !path.startsWith("/Users/paoloscotto/Library/Application Support/CallHistoryTransactions"))
-                    .filter(path -> path.getFileName().toString().equals(fileName))
-                    .map(Path::toString)
-                    .collect(Collectors.toList());
+  public static String findFile(String fileName) {
+    String homeDir = System.getProperty("user.home"); // get the path to the current user's home directory
+    File start = new File(homeDir);
+    Queue<File> queue = new LinkedList<>(); // create a queue to hold directories to search
 
-            if (paths.isEmpty()) {
-                return null;
-            } else if (paths.size() == 1) {
-                return paths.get(0);
-            } else {
-                System.out.println(String.format("\n\033[93m[WARNING]\033[0m Found %d files with the same name:", paths.size()));
-                paths.forEach(path -> System.out.println("- " + path));
-                String mostRecentFile = paths.stream()
-                                             .max(Comparator.comparingLong(path -> new File(path).lastModified()))
-                                             .orElse(null);
-                if (mostRecentFile != null) {
-                    System.out.println("\n[INFO] Using the most recent file: " + mostRecentFile);
+    queue.add(start); // add the starting directory to the queue
+
+    while (!queue.isEmpty()) {
+        File[] files = queue.poll().listFiles(); // get the files in the next directory in the queue
+        if (files != null) {
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    queue.add(file); // add directories to the queue to be searched
+                } else if (file.getName().equals(fileName)) {
+                    return file.getAbsolutePath(); // return the path of the first file with the given name
                 }
-                return mostRecentFile;
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
         }
     }
+
+    return null; // return null if the file was not found
 
 }
 
