@@ -27,7 +27,7 @@ pipeline {
                           keepAll: true,
                           reportDir: 'target/site/jacoco',
                           reportFiles: 'index.html',
-                          reportName: 'JaCoCo Code Coverage Report'
+                          reportName: 'JaCoCo Coverage Report'
                   ])
         }
       }
