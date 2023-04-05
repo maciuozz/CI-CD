@@ -1,7 +1,7 @@
 
 FILE_NAME := texto.txt
 
-all: clean build test exec
+all: clean build test exec package
 
 clean:
 	@mvn clean -q
@@ -22,4 +22,7 @@ test:
 
 exec:
 	@mvn exec:java -Dexec.args="$(FILE_NAME)" -q
+
+package: 
+	@mvn jar:jar -q
 
