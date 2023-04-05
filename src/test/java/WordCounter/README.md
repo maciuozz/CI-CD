@@ -12,7 +12,7 @@ In the ***tests*** repository there are all the files used to test the applicati
 6. testOneWord() tests the application when the input file has only one word.
 7. testAllSameFrequency() tests the application when all the words in the input file have the same frequency.
 
-During the test stage we use the JaCoCo plugin to generate a report on code coverage. This report can be viewed in the ***Artifacts*** section:
+During the test stage we use the ***JaCoCo*** plugin to generate a report on code coverage. This report can be viewed in the ***Artifacts*** section:
 
 <img width="1792" alt="Screenshot 2023-04-05 at 18 19 43" src="https://user-images.githubusercontent.com/118285718/230146351-29a2f05f-0a13-460c-be37-b2253c72560b.png">
 
