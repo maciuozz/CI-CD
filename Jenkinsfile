@@ -21,6 +21,15 @@ pipeline {
     stage('Test') {
       steps {
         sh 'make test'
+        jacoco(execPattern: '**/target/classes/**/*.class', classPattern: '**/target/test-classes/**/*.class')
+        publishHTML(target: [
+          allowMissing: false,
+          alwaysLinkToLastBuild: true,
+          keepAll: true,
+          reportDir: 'target/site/jacoco/',
+          reportFiles: 'index.html',
+          reportName: 'Code Coverage Report'
+        ])
       }
     }
 
