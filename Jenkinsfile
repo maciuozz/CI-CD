@@ -21,6 +21,7 @@ pipeline {
     stage('Test') {
       steps {
         sh 'make test'
+        jacoco(classPattern: '**/*Test.class')
       }
     }
 
