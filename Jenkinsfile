@@ -21,43 +21,34 @@ pipeline {
     stage('Test') {
       steps {
         sh 'make test'
-        jacoco(execPattern: '**/target/classes/**/*.class', classPattern: '**/target/test-classes/**/*.class')
-        publishHTML([
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'target/site/jacoco/',
-                    reportFiles: 'index.html',
-                    reportName: 'Code Coverage Report'
-                  ])
-        }
       }
-
-      stage('Exec') {
-        steps {
-          sh '''make exec
-'''
-        }
-      }
-
-      stage('Package & Save') {
-        steps {
-          sh 'make package'
-          archiveArtifacts 'target/*.jar'
-        }
-      }
-
-      stage('Manual Approval') {
-        steps {
-          input(message: 'Would you like to deploy to production?', ok: 'Yes, go ahead!')
-        }
-      }
-
-      stage('Deploy') {
-        steps {
-          echo 'Deployment successful!'
-        }
-      }
-
     }
+
+    stage('Exec') {
+      steps {
+        sh '''make exec
+'''
+      }
+    }
+
+    stage('Package & Save') {
+      steps {
+        sh 'make package'
+        archiveArtifacts 'target/*.jar'
+      }
+    }
+
+    stage('Manual Approval') {
+      steps {
+        input(message: 'Would you like to deploy to production?', ok: 'Yes, go ahead!')
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        echo 'Deployment successful!'
+      }
+    }
+
   }
+}
