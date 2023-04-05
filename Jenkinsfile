@@ -22,7 +22,7 @@ pipeline {
       steps {
         sh 'make test'
         publishHTML([
-                          allowMissing: false,
+                          allowMissing: true,
                           alwaysLinkToLastBuild: true,
                           keepAll: true,
                           reportDir: 'target/site/jacoco',
