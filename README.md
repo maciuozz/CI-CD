@@ -18,7 +18,7 @@ The pipeline runs on agent_22, while agent_11 is designated for the job that exc
         end
     end
     
-In the Makefile there are 5 targets: ***clean, build, test, exec***. It is possible to try the application locally and execute all targets using a single command:
+In the Makefile there are 5 targets: ***clean, build, test, exec, package***. It is possible to try the application locally and execute all targets using a single command:
 
     make all
     
