@@ -22,15 +22,15 @@ pipeline {
       steps {
         sh 'make test'
         publishHTML([
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'target/site/jacoco',
-                    reportFiles: 'index.html',
-                    reportName: 'JaCoCo Code Coverage Report'
-                  ])
-        }
+            allowMissing: false,
+            alwaysLinkToLastBuild: true,
+            keepAll: true,
+            reportDir: 'target/site/jacoco',
+            reportFiles: 'index.html',
+            reportName: 'JaCoCo Code Coverage Report'
+        ])
       }
+    }
 
       stage('Exec') {
         steps {
