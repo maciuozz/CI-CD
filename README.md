@@ -24,9 +24,9 @@ In the Makefile there are 5 targets: ***clean, build, test, exec***. It is possi
     
 The presence of 2 files named ***texto.txt*** with different paths, serves to demonstrate the calculation of the FILE_PATH variable in situations where multiple files share the same name.  
 
-The Jenkins file displays all the steps involved in building the pipeline. Note that the ***deploy*** step is intended solely for illustrative purposes and its function is limited to printing a message. Here are some pictures:  
+The Jenkins file displays all the steps involved in building the pipeline. Note that the ***deploy*** step is intended solely for illustrative purposes and its function is limited to printing a message. Here are some pictures:
 
-<img width="1783" alt="Screenshot 2023-04-03 at 13 29 43" src="https://user-images.githubusercontent.com/118285718/229496877-042b2467-bfd2-42ed-8f51-d2e9c993519e.png">
+<img width="1792" alt="Screenshot 2023-04-05 at 17 32 49" src="https://user-images.githubusercontent.com/118285718/230145763-ae53833c-343c-4f72-827e-25ec7e1f0e2a.png">
 <img width="1784" alt="Screenshot 2023-04-04 at 01 59 45" src="https://user-images.githubusercontent.com/118285718/229652360-eac211ee-6884-483f-a8f3-e43b71c572a1.png">
 <img width="1790" alt="Screenshot 2023-04-03 at 13 35 52" src="https://user-images.githubusercontent.com/118285718/229498165-c13a939f-01d4-47d4-9b50-5d1049bbe858.png">
 <img width="1789" alt="Screenshot 2023-04-03 at 13 31 09" src="https://user-images.githubusercontent.com/118285718/229497391-e1cbd8c2-4127-4d20-9882-992a9e925d1d.png">
