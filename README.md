@@ -32,7 +32,7 @@ The Jenkins file displays all the steps involved in building the pipeline. Note 
 <img width="1789" alt="Screenshot 2023-04-03 at 13 31 09" src="https://user-images.githubusercontent.com/118285718/229497391-e1cbd8c2-4127-4d20-9882-992a9e925d1d.png">
 <img width="1785" alt="Screenshot 2023-04-03 at 13 31 38" src="https://user-images.githubusercontent.com/118285718/229497405-9e272dd4-9219-4415-9dff-382739e12d76.png">
 
-Download the artifact by accessing the "Artifacts" section in the Jenkins interface:  
+Download the artifact by accessing the ***Artifacts*** section in the Jenkins interface:  
 
 <img width="1792" alt="Screenshot 2023-04-02 at 14 38 54" src="https://user-images.githubusercontent.com/118285718/229353309-61370a6f-f69c-43e7-b4ce-58b8bb3cf559.png">
 
