@@ -16,6 +16,6 @@ During the test stage we use the Jacoco plugin to generate a report on code cove
 
 <img width="1792" alt="Screenshot 2023-04-05 at 18 19 43" src="https://user-images.githubusercontent.com/118285718/230146351-29a2f05f-0a13-460c-be37-b2253c72560b.png">
 
-Clicking on the ***Jacoco Coverage Report*** will open an HTML file:  
+Clicking on the ***JaCoCo Coverage Report*** will open an HTML file:  
 
 <img width="1789" alt="Screenshot 2023-04-05 at 17 15 42" src="https://user-images.githubusercontent.com/118285718/230146378-954f117b-5777-4dd7-adab-ba699f5806f2.png">
