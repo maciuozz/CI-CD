@@ -33,7 +33,7 @@ pipeline {
 
     stage('Package & Save') {
       steps {
-        sh 'mvn jar:jar'
+        sh 'make package'
         archiveArtifacts 'target/*.jar'
       }
     }
