@@ -21,7 +21,6 @@ pipeline {
     stage('Test') {
       steps {
         sh 'make test'
-        publishHTML(allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/site/jacoco', reportFiles: 'index.html', reportName: 'JaCoCo Code Coverage Report')
       }
     }
 
