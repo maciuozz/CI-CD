@@ -25,10 +25,10 @@ pipeline {
             allowMissing: false,
             alwaysLinkToLastBuild: true,
             keepAll: true,
-            reportDir: \'target/site/jacoco\',
-            reportFiles: \'index.html\',
-            reportName: \'JaCoCo Coverage Report\'
-         ])
+            reportDir: 'target/site/jacoco',
+            reportFiles: 'index.html',
+            reportName: 'JaCoCo Coverage Report'
+        ])
       }
     }
 
