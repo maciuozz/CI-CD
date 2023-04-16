@@ -34,8 +34,7 @@ pipeline {
 
       stage('Exec') {
         steps {
-          sh '''make exec
-'''
+          sh 'make exec'
         }
       }
 
