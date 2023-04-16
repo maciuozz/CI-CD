@@ -2,7 +2,11 @@
 
 There are 3 more README files: one for the ***src/main/java/WordCounter*** repository, another for the ***src/test/java/WordCounter*** repository and a third one for the ***DockerAgents-JenkinsNodes-Job*** repository.  
 For this project I utilized a virtual machine running Ubuntu 22.04 as the environment for Jenkins. I used 2 Docker agents that connect to 2 Jenkins nodes.
-The pipeline runs on agent_22, while agent_11 is designated for the job that exclusively runs the tests. I created the VM with the Vagrant script below: 
+The pipeline runs on agent_22, while agent_11 is designated for the job that exclusively runs the tests. Jenkins checks for any changes that are pushed to the Git repository every 2 hours; this way we make sure that the pipeline stays up-to-date: 
+
+<img width="1230" alt="Screenshot 2023-04-16 at 18 18 51" src="https://user-images.githubusercontent.com/118285718/232326574-a899380d-2e4a-4a01-ad2d-45eba7a4b0ca.png">
+
+I created the VM with the Vagrant script below: 
 
     Vagrant.configure("2") do |config|
         config.vm.define "cicd-vm" do |cicd|
