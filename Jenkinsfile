@@ -3,6 +3,7 @@ pipeline {
     node {
       label 'agent_22'
     }
+
   }
   stages {
     stage('Clean') {
