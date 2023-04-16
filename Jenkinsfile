@@ -21,14 +21,14 @@ pipeline {
     stage('Test') {
       steps {
         sh 'make test'
-        sh '''publishHTML([
-            allowMissing: false,
-            alwaysLinkToLastBuild: true,
-            keepAll: true,
-            reportDir: \'target/site/jacoco\',
-            reportFiles: \'index.html\',
-            reportName: \'JaCoCo Coverage Report\'
-         ])'''
+        publishHTML([
+Â  Â  Â  Â  Â  Â  allowMissing: false,
+Â  Â  Â  Â  Â  Â  alwaysLinkToLastBuild: true,
+Â  Â  Â  Â  Â  Â  keepAll: true,
+Â  Â  Â  Â  Â  Â  reportDir: \'target/site/jacoco\',
+Â  Â  Â  Â  Â  Â  reportFiles: \'index.html\',
+Â  Â  Â  Â  Â  Â  reportName: \'JaCoCo Coverage Report\'
+Â  Â  Â  Â  Â ])
         }
       }
 
