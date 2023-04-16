@@ -29,7 +29,6 @@ pipeline {
                     reportFiles: 'index.html',
                     reportName: 'JaCoCo Coverage Report'
                   ])
-        }
       }
     }
 
