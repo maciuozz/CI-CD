@@ -47,5 +47,6 @@ pipeline {
       steps {
         echo 'Deployment successful!'
       }
-    }
+    } 
+  }
 }
